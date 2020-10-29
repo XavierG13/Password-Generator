@@ -21,9 +21,17 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 30) {
     alert("Invalid number choice")
   } else {
-useUpperCase = confirm("Do you want upper case letters?");
-useLowerCase = confirm("Do you want lower case letters?");
-useSpecialChars = confirm('Do you want special characters?')
-useNumbers = confirm('Do you want numbers?');
+    useLowerCase = confirm("Do you want lower case letters?");
+    useUpperCase = confirm("Do you want upper case letters?");
+    useSpecialChars = confirm('Do you want special characters?');
+    useNumbers = confirm('Do you want numbers?');
+  }
+
+  function createPassword() {
+    if (useLowerCase != true && useUpperCase != true && useSpecialChars != true && useNumbers != true) {
+      confirm("Please choose at least one option.");
+    } else if (useLowerCase === true && useUpperCase === true && useSpecialChars === true && useNumbers === true) {
+      for (i < 0; i < passwordLength; i++)
+    }
   }
 }
