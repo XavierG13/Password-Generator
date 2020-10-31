@@ -14,9 +14,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Ask users how long and what to include in their password
-var values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()".split(" ");
+var values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()".split("");
 
 function generatePassword() {
+  var fnPassword = "";
+    
   var passwordLength = prompt("How long do you want your password to be? Between 8 and 30 characters?");
   if (passwordLength < 8 || passwordLength > 30) {
     alert("Invalid number choice")
@@ -27,14 +29,14 @@ function generatePassword() {
     useNumbers = confirm('Do you want numbers?');
   }
 
-  function writePassword() {
-    if (useLowerCase != true && useUpperCase != true && useSpecialChars != true && useNumbers != true) {
-      confirm("Please choose at least one option.");
-    } else if (useLowerCase === true && useUpperCase === true && useSpecialChars === true && useNumbers === true) {
-      for (i = 0; i < password; i++);
-      password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-    }
-
-    writePassword();
+  if (useLowerCase != true && useUpperCase != true && useSpecialChars != true && useNumbers != true) {
+    confirm("Please choose at least one option.");
+  } else if (useLowerCase === true && useUpperCase === true && useSpecialChars === true && useNumbers === true) {
+    for (i = 0; i < password; i++);
+    fnPassword = fnPassword + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
   }
+
+  return fnPassword;
 }
+
+generatePassword();
