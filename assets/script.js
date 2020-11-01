@@ -18,22 +18,27 @@ var values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$
 
 function generatePassword() {
   var fnPassword = "";
-    
+  var useLowerCase = "";
+  var useUpperCase = "";
+  var useSpecialChars = "";
+  var useNumbers = "";
+
+
   var passwordLength = prompt("How long do you want your password to be? Between 8 and 30 characters?");
   if (passwordLength < 8 || passwordLength > 30) {
-    alert("Invalid number choice")
+    alert("Invalid number choice");
   } else {
     useLowerCase = confirm("Do you want lower case letters?");
     useUpperCase = confirm("Do you want upper case letters?");
-    useSpecialChars = confirm('Do you want special characters?');
-    useNumbers = confirm('Do you want numbers?');
+    useSpecialChars = confirm("Do you want special characters?");
+    useNumbers = confirm("Do you want numbers?");
   }
 
-  if (useLowerCase != true && useUpperCase != true && useSpecialChars != true && useNumbers != true) {
+  if (useLowerCase !== true && useUpperCase !== true && useSpecialChars !== true && useNumbers !== true) {
     confirm("Please choose at least one option.");
   } else if (useLowerCase === true && useUpperCase === true && useSpecialChars === true && useNumbers === true) {
-    for (i = 0; i < password; i++);
-    fnPassword = fnPassword + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+    for (var i = 0; i <= fnPassword; i++);
+    fnPassword = fnPassword + value.values(Math.floor(Math.random() * Math.floor(values.length - 1)));
   }
 
   return fnPassword;
